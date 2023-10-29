@@ -18,6 +18,7 @@ class semantic_search:
         print(f"seach begins{'.'*90}")
         # Ask a question on the data you just added.
         # result = pipeline.run(query="where the instruction is decoded and dispatched ")
+        param  = " ".join(param) if isinstance(param, list) else param
         result = self.pipeline.run(query=param)
         file_names = []
         for r in result['documents']:
