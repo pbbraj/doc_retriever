@@ -9,11 +9,8 @@ class semantic_search:
         from haystack.document_stores import InMemoryDocumentStore
         from haystack.utils import build_pipeline, add_example_data, print_answers, print_documents
 
-        # We support many different databases. Here, we load a simple and lightweight in-memory database.
         document_store = InMemoryDocumentStore(use_bm25=True)
         add_example_data(document_store, patent_txt_folder_path)
-
-        # Build a pipeline with a Retriever to get relevant documents to the query and a PromptNode interacting with LLMs using a custom prompt.
         self.pipeline = build_pipeline(provider, API_KEY, document_store)
 
     def Search(self, param):
