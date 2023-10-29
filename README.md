@@ -6,7 +6,7 @@ python >3.7
 reuired modules are provided in requirements.txt
 
 # run pip command to install required python modules
-    pip install requirements.txt
+    pip install -r requirements.txt
 
 # run app.py 
 using any python IDE or with python command in any terminal
