@@ -4,5 +4,3 @@ langchain==0.0.325
 openai==0.28.1
 torch==2.1.0
 beautifulsoup4
-os
-json
