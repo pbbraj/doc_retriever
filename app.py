@@ -1,13 +1,14 @@
 from flask import Flask, request, jsonify
 from constants import *
 
+from haystack.document_stores import InMemoryDocumentStore
+from haystack.utils import build_pipeline, add_example_data, print_answers, print_documents
+
 app = Flask(__name__)
     
 class semantic_search:
     def __init__(self):
         print(f"initializing semantic search algorithm{'.'*90}")
-        from haystack.document_stores import InMemoryDocumentStore
-        from haystack.utils import build_pipeline, add_example_data, print_answers, print_documents
 
         document_store = InMemoryDocumentStore(use_bm25=True)
         add_example_data(document_store, patent_txt_folder_path)
